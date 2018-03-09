@@ -13,11 +13,10 @@ def pedirNumero(invitacion):
         numero = input(invitacion)
         try:
             numero = int(numero)
+            if MIN() <= numero <= MAX():
+                break
         except:
             pass
-    
-        if MIN() <= numero <= MAX():
-            break
     return numero
 
 print('######Introduzca el número a adivinar######')
