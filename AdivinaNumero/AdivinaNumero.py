@@ -7,6 +7,18 @@ def MIN():
 def MAX():
     return 99
 
+def pedirNumero(invitacion):
+    invitacion += " entre "+str(MIN())+" y "+str(MAX())+": "
+    while True:
+        numero = input(invitacion)
+        try:
+            numero = int(numero)
+            if MIN() <= numero <= MAX():
+                break
+        except:
+            pass
+    return numero
+
 print('######Introduzca el número a adivinar######')
 
 numero = pedirNumero("Introduzca un numero")
@@ -24,14 +36,3 @@ while True:
 
 sys.exit()
 
-def pedirNumero(invitacion):
-    invitacion += " entre "+str(MIN())+" y "+str(MAX())+": "
-    while True:
-        numero = input(invitacion)
-        try:
-            numero = int(numero)
-            if MIN() <= numero <= MAX():
-                break
-        except:
-            pass
-    return numero
