@@ -19,15 +19,25 @@ def pedirNumeroAAdivinar(invitacion, max, min):
         if min <= entrada <= max:
             return entrada
 
+def comprobarLimites(min, max):
+    if min < max:
+        return True
+    else:
+        print('El minimo es MAYOR que el maximo')
+        return False
+
 
 
 print('######Introduzca el número a adivinar######')
 
 minimo = maximo = 0
+condicion = False
 
-minimo = pedirNumero("Introduzca un numero minimo incluido: ")
-maximo = pedirNumero("Introduzca un numero maximo incluido: ")
-#comprobarEntrada(minimo, maximo)
+while not condicion:
+    minimo = pedirNumero("Introduzca un numero minimo incluido: ")
+    maximo = pedirNumero("Introduzca un numero maximo incluido: ")
+    condicion = comprobarLimites(minimo, maximo)
+
 numero = pedirNumeroAAdivinar("Introduzca numero a adivinar: ", maximo, minimo)
 
 #Parte2
