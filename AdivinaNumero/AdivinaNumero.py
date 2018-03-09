@@ -1,19 +1,13 @@
 
 import sys
 
-def MIN():
-    return 0
-
-def MAX():
-    return 99
-
-def pedirNumero(invitacion):
-    invitacion += " entre "+str(MIN())+" y "+str(MAX())+": "
+def pedirNumero(invitacion, min = 0, max = 99):
+    invitacion += " entre "+str(min)+" y "+str(max)+": "
     while True:
         numero = input(invitacion)
         try:
             numero = int(numero)
-            if MIN() <= numero <= MAX():
+            if min <= numero <= max:
                 break
         except:
             pass
@@ -25,7 +19,7 @@ numero = pedirNumero("Introduzca un numero")
 
 #Parte2
 while True:
-    intento = pedirNumero("Adivine el numero")
+    intento = pedirNumero("Adivine el numero", 0, 100)
     if intento < numero:
         print('Más grande...')
     elif intento > numero:
